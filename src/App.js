@@ -1,6 +1,3 @@
-import logo from "./logo.svg";
-import SignUp from "./signup.jsx";
-import Login from "./login.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Ph from "./components/ph";
 import Temperature from "./components/temperature";
