@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #081720;
+}
+
+.temperature-container {
+  padding: 50px;
+  text-align: center;
+}
+.temperature-sub-container {
+}
+
+.project-heading {
+  margin-bottom: 60px;
+  color: rgb(255, 255, 255);
+}
+.temperature-heading {
+  margin-top: 30px;
+  color: rgb(17, 209, 10);
+}
+
+.temperature-value {
+  font-size: 30px;
+  color: rgb(36, 133, 49);
+}
+
+.chart {
+  margin-bottom: 30px;
+}

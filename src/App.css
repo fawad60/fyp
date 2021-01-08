@@ -1,0 +1,26 @@
+.layout {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.App h1 {
+  text-align: center;
+}
+
+.op {
+  color: #f04400;
+}
+nav {
+  background-color: #1c0447;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+nav ul li {
+  list-style: none;
+  color: white;
+}
