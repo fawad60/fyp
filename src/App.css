@@ -1,6 +1,5 @@
-.layout {
+.App {
   display: flex;
-  flex-wrap: wrap;
 }
 
 .App h1 {
