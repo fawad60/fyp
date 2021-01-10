@@ -1,7 +1,7 @@
 import FusionCharts from "fusioncharts";
 import charts from "fusioncharts/fusioncharts.charts";
 import ReactFusioncharts from "react-fusioncharts";
-import React, { Component } from "react";
+import React from "react";
 import Widgets from "fusioncharts/fusioncharts.widgets";
 
 import FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";

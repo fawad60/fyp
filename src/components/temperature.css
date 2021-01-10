@@ -32,3 +32,12 @@ body {
 .chart {
   margin-bottom: 30px;
 }
+
+.headingdiv {
+  color: green;
+  border-bottom: 2px solid rgb(156, 156, 156);
+}
+
+.red {
+  color: rgb(104, 5, 5);
+}

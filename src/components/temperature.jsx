@@ -31,7 +31,7 @@ export default function Temperature() {
         <div className={classes.root}>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6} md={4}>
-              <Paper className={classes.paper}>
+              <Paper component="div" className={classes.paper}>
                 <Temperaturegauge value={value} />
               </Paper>
             </Grid>
