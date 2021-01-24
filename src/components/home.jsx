@@ -85,7 +85,7 @@ export default function Home() {
             <Grid item xs={12} sm={6} md={6}>
               <Paper className={classes.paper}>
                 <h2 className="headingdiv">Disease</h2>
-                <h2 className="red">HIGHER LEVEL BACTERIA Diseases</h2>
+                <h2 className="red">Risk of HIGHER LEVEL BACTERIA Diseases </h2>
 
                 <img
                   width="100px"

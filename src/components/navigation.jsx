@@ -1,12 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import "../App.css";
 export const Navigation = () => {
   const navstyle = {
     "background-color": "Black",
-    height: "100vh",
-    display: "flex",
-    "align-items": "center",
+    height: "10vh",
   };
   const linkstyle = {
     "list-style": "none",
@@ -38,11 +36,11 @@ export const Navigation = () => {
             </Link>
           </li>
 
-          <l>
+          <li>
             <Link style={liststyle} to="/ph">
               PH
             </Link>
-          </l>
+          </li>
           <li>
             <Link style={liststyle} to="/turbity">
               Turbity

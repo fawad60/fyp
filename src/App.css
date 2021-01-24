@@ -1,7 +1,3 @@
-.App {
-  display: flex;
-}
-
 .App h1 {
   text-align: center;
 }
@@ -15,11 +11,12 @@ nav {
 
 nav ul {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-around;
 }
 
 nav ul li {
   list-style: none;
   color: white;
+  margin-top: 20px;
 }
