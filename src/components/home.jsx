@@ -46,6 +46,16 @@ export default function Home() {
     }
   }
 
+  function WaterQuality() {
+    if (GlobalData.Ph > 7) {
+      return "High Ph ";
+    } else if (GlobalData.Ph < 6) {
+      return "Low PH (Acidic)";
+    } else {
+      return "   Water Qaulity is normal";
+    }
+  }
+
   return (
     <div className="temperature-container">
       <h1 className="project-heading"> Sensor Data </h1>
@@ -97,9 +107,7 @@ export default function Home() {
             <Grid item xs={12} sm={6} md={4}>
               <Paper className={classes.paper}>
                 <h2 className="headingdiv">Water quality</h2>
-                <h2 className="red margin-bottom-small">
-                  {GlobalData.Ph > 7 ? "High PH" : "Contaminated"}
-                </h2>
+                <h2 className="red margin-bottom-small">{WaterQuality()}</h2>
 
                 <img
                   alt=""

@@ -34,17 +34,10 @@ export default function Ph() {
                 <Phbar />
               </Paper>
             </Grid>
-            <Grid item xs={12} sm={6} md={8}>
+            <Grid item xs={12} sm={6} md={12}>
               <Paper className={classes.paper}>
                 {" "}
                 <Phline />{" "}
-              </Paper>
-            </Grid>
-
-            <Grid item xs={12} sm={6} md={2}>
-              <Paper className={classes.paper}>
-                <h3 className="temperature-heading">Current PH value</h3>
-                <h1 className="temperature-value">7 </h1>
               </Paper>
             </Grid>
 
