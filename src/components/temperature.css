@@ -41,3 +41,11 @@ body {
 .red {
   color: rgb(104, 5, 5);
 }
+
+.margin-bottom-small {
+  margin-bottom: 20px;
+}
+
+.margin-bottom-medium {
+  margin-bottom: 50px;
+}

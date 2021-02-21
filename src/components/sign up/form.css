@@ -1,0 +1,152 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #43c6ac;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #191654, #43c6ac);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #191654, #43c6ac);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  box-sizing: border-box;
+}
+
+.maindiv {
+  padding: 25px 80px;
+}
+
+.formdiv {
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  background-color: white;
+  width: 100%;
+}
+
+.form {
+  padding-bottom: 15px;
+  width: 37%;
+  padding-left: 20px;
+}
+
+.form_image {
+  padding-right: 50px;
+  width: 50%;
+  background-image: url("./image1.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-right: 1px solid rgb(177, 168, 168);
+}
+
+input:not([type="submit"]) {
+  background-color: rgb(179, 170, 170);
+  color: rgb(24, 23, 23);
+  font-size: 18px;
+  padding: 10px 10px 0 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 2.3px solid green;
+  border-radius: 0;
+  outline: none;
+  background: transparent;
+}
+
+input:not([type="submit"]):focus {
+  padding-top: 15px;
+  border-bottom: 4px solid red;
+  transition: all;
+  transition-duration: 0.7s;
+}
+
+.input-label {
+  margin-top: 10px;
+}
+
+.image_form_jpg {
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.8;
+}
+
+.input-label {
+  position: relative;
+}
+
+label {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  color: rgba(59, 58, 58, 0.774);
+  font-size: 17px;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  pointer-events: none;
+  text-transform: uppercase;
+}
+
+input:not([type="submit"]):focus ~ label,
+input:not([type="submit"]):valid ~ label {
+  font-size: 14px;
+  transform: translateY(-17px);
+  transition: all;
+  transition-duration: 0.5s;
+}
+
+.form h2 {
+  background-image: linear-gradient(
+    45deg,
+    rgb(187, 73, 130) 0%,
+    rgb(88, 133, 170) 31%,
+    rgb(9, 211, 2) 100%
+  );
+  background-clip: text;
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+
+  margin-bottom: 50px;
+
+  font-size: 3.5vw;
+  transition: all;
+  transition-duration: 1s;
+}
+
+.form h2:hover {
+  transform: scale(1.25) rotate(5deg) translateX(50px);
+  transition: all;
+  transition-duration: 1s;
+  cursor: pointer;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 10px;
+  margin: 0 auto;
+  border-radius: 20px;
+  border: 2px solid green;
+  color: white;
+  background-color: green;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 10px 20px rgba(23, 94, 26, 0.201);
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  transition: all 0.2s;
+}
+
+.submit-btn:active,
+.submit-btn:focus {
+  border: 4px sold green;
+  outline: none;
+  transform: translateY(0px);
+  transition: all 0.5s;
+}

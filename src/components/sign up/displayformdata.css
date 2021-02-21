@@ -1,0 +1,63 @@
+body {
+  background: #4568dc; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #b06ab3,
+    #4568dc
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #b06ab3,
+    #4568dc
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  padding-top: 120px;
+  padding:70px;
+  font-family: "Montserrat", sans-serif;
+}
+
+h2
+{
+  text-align: center;
+  color: white;
+  font-size: 40px;
+}
+
+.table-div {
+  background-color: white;
+  min-height: 50vh;
+  margin: 0 auto;
+  width:100%;
+}
+
+table {
+  margin-top: 80px;
+  overflow-x: scroll;
+  table-layout: fixed;
+
+}
+table,
+td,
+tr {
+    border-bottom: 0.2px solid rgb(199, 196, 196);
+  padding: 12px;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 14px;
+
+}
+
+td,
+tr
+{
+  width: 250px;
+}
+
+td {
+  color: rgb(83, 83, 83);
+}
+
+th {
+  padding: 12px;
+  font-size: 14px;
+}

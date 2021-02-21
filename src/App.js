@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Ph from "./components/ph";
 import Temperature from "./components/temperature";
 import Home from "./components/home";
+import { SignupForm } from "./components/SignUp";
 import { Navigation } from "./components/navigation";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -25,6 +26,7 @@ function App() {
             <Route path="/turbity" component={Turbity} />
             <Route path="/temperature" component={Temperature} />
             <Route path="/ph" component={Ph} />
+            <Route path="/signup" component={SignupForm} />
             <Route path="/" component={Home} />
           </Switch>
         </div>

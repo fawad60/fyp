@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     textAlign: "center",
     color: theme.palette.text.secondary,
+    height: "100%",
   },
 }));
 
@@ -30,11 +31,13 @@ export default function Temperature() {
       <div className="temperature-sub-container">
         <div className={classes.root}>
           <Grid container spacing={3}>
-            <Grid item xs={12} sm={6} md={4}>
+            {/*    <Grid item xs={12} sm={6} md={4}>
               <Paper component="div" className={classes.paper}>
+                <h5 className="margin-bottom-medium">Temperature</h5>
                 <Temperaturegauge value={value} />
               </Paper>
             </Grid>
+            */}
             <Grid item xs={12} sm={6} md={4}>
               <Paper className={classes.paper}>
                 <Temperaturemeter value={value} />
@@ -42,6 +45,8 @@ export default function Temperature() {
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
               <Paper className={classes.paper}>
+                <h5 className="margin-bottom-small">Temperature</h5>
+
                 <Thermometer
                   theme="light"
                   value={value}
@@ -53,15 +58,10 @@ export default function Temperature() {
                 />
               </Paper>
             </Grid>
-            <Grid item xs={12} sm={6} md={3}>
-              <Paper className={classes.paper}>
-                <h3 className="temperature-heading">Current Temperature</h3>
-                <h1 className="temperature-value">{value} °C</h1>
-              </Paper>
-            </Grid>
 
             <Grid justify="center" item xs={12} sm={12}>
               <Paper className={classes.paper}>
+                <h2>Temperature Trend</h2>
                 <TemperatureLine />
               </Paper>
             </Grid>

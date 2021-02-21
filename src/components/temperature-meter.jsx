@@ -10,7 +10,9 @@ import ReactFC from "react-fusioncharts";
 
 ReactFC.fcRoot(FusionCharts, Widgets, FusionTheme);
 // Resolves charts dependancy
+
 charts(FusionCharts);
+
 const dataSource = {
   chart: {
     caption: "Temperature",
@@ -48,14 +50,21 @@ const dataSource = {
   dials: {
     dial: [
       {
-        value: "30",
+        value: 10,
       },
     ],
   },
 };
-
 class Temperaturemeter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: this.props.value,
+    };
+  }
   render() {
+    dataSource.dials.dial[0].value = this.state.value;
+    console.table(this.state.value);
     return (
       <ReactFusioncharts
         type="angulargauge"

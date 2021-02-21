@@ -3,8 +3,6 @@ import ReactApexChart from "react-apexcharts";
 
 class Temperaturegauge extends React.Component {
   constructor(props) {
-    console.log(props.value);
-
     super(props);
 
     this.state = {
@@ -75,7 +73,6 @@ class Temperaturegauge extends React.Component {
   render() {
     return (
       <div id="chart" className="chart">
-        console.log(this.props.value);
         <ReactApexChart
           options={this.state.options}
           series={this.state.series}
