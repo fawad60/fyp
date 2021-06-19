@@ -1,5 +1,3 @@
-
-
 import React, { Component } from "react";
 import { StyleSheet, TextInput, View, Button } from "react-native";
 
@@ -11,7 +9,7 @@ export default class fyp extends Component {
     setTimeout(this.SearchRecord, 4000);
   }
   SearchRecord = () => {
-    var SearchAPIURL = "http://192.168.8.100/fyp/temp.php";
+    var SearchAPIURL = "localhost/fyp/temp.php";
     var headers = {
       Accept: "application/json",
       "Content-Type": "application.json",

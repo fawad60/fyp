@@ -22,7 +22,8 @@ const useStyles = makeStyles((theme) => ({
 
 const value = Math.floor(Math.random() * 101);
 
-export default function Temperature() {
+export default function Temperature(props) {
+  console.log(props.location.data, " temperature ");
   const classes = useStyles();
   return (
     <div className="temperature-container">

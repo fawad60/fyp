@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
-export const Navigation = () => {
+export const Navigation = ({ data }) => {
+  console.log(data);
   const navstyle = {
     "background-color": "Black",
     height: "10vh",
@@ -25,13 +26,25 @@ export const Navigation = () => {
       <nav style={navstyle}>
         <ul style={linkstyle}>
           <li>
-            <Link style={liststyle} to="/home">
+            <Link
+              style={liststyle}
+              to={{
+                pathname: "/home",
+                data,
+              }}
+            >
               Home
             </Link>
           </li>
 
           <li>
-            <Link style={liststyle} to="/temperature">
+            <Link
+              style={liststyle}
+              to={{
+                pathname: "/temperature",
+                data,
+              }}
+            >
               Temperature
             </Link>
           </li>

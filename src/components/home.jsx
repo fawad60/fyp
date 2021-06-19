@@ -1,4 +1,7 @@
 import React from "react";
+import { useEffect, useLocatio } from "react-router-dom";
+import { withRouter } from "react-router";
+
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
@@ -11,9 +14,7 @@ const GlobalData = {
   Ph: Math.floor(Math.random() * 14),
 };
 
-const GlobalDataUpdater = () => {};
-
-console.log(GlobalData.ph);
+console.log(GlobalData.ph, "state ");
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,7 +35,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Home() {
+function Home(props) {
+  const Data = props.location.data;
+  console.log("data of state is ", Data);
   const classes = useStyles();
   function diseaseCheck() {
     if (GlobalData.Ph > 7) {
@@ -56,6 +59,17 @@ export default function Home() {
     }
   }
 
+  let temp = [];
+
+  function updatedata() {
+    if (Data) {
+      Data.map((data) => temp.push(data.Temp), console.table(temp));
+    } else return;
+  }
+
+  updatedata();
+
+  console.log(temp);
   return (
     <div className="temperature-container">
       <h1 className="project-heading"> Sensor Data </h1>
@@ -67,7 +81,7 @@ export default function Home() {
               <Paper className={classes.paper}>
                 <h2 className="headingdiv">Temperature</h2>
                 <h2 className="red margin-bottom-small">
-                  {GlobalData.temp} ℃{" "}
+                  {temp[0] ? temp[0] : 0} ℃{" "}
                 </h2>
 
                 <img
@@ -144,3 +158,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default withRouter(Home);
