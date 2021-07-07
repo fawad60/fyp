@@ -61,6 +61,8 @@ class Temperaturemeter extends React.Component {
     this.state = {
       value: this.props.value,
     };
+
+    console.log("val check", this.state.value);
   }
   render() {
     dataSource.dials.dial[0].value = this.state.value;

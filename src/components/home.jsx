@@ -1,5 +1,5 @@
-import React from "react";
-import { useEffect, useLocatio } from "react-router-dom";
+import React, { useState } from "react";
+import { useEffect, useLocation } from "react-router-dom";
 import { withRouter } from "react-router";
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -8,14 +8,15 @@ import Grid from "@material-ui/core/Grid";
 import Mixlinetimechart from "./time-line-serieschart";
 import WaterLevel from "./WaterLevel";
 import "./temperature.css";
+import Temperature from "./temperature";
 
-const GlobalData = {
+/* const GlobalData = {
   temp: Math.floor(Math.random() * 101),
   Ph: Math.floor(Math.random() * 14),
 };
 
 console.log(GlobalData.ph, "state ");
-
+*/
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -37,9 +38,19 @@ const useStyles = makeStyles((theme) => ({
 
 function Home(props) {
   const Data = props.location.data;
-  console.log("data of state is ", Data);
+  console.log("data of state is ", Data?.Sensordata);
+
   const classes = useStyles();
-  function diseaseCheck() {
+
+  const { Temperature, Sensordata } = Data ? Data : "";
+
+  console.log("destructure ", Sensordata);
+  console.log(Temperature);
+  let data = Temperature?.map((data) => console.log("hey", data));
+
+  console.log("hyy ", data);
+
+  /*function diseaseCheck() {
     if (GlobalData.Ph > 7) {
       return "metabolic alkalosis";
     } else if (GlobalData.Ph < 6) {
@@ -59,8 +70,7 @@ function Home(props) {
     }
   }
 
-  let temp = [];
-
+  
   function updatedata() {
     if (Data) {
       Data.map((data) => temp.push(data.Temp), console.table(temp));
@@ -68,8 +78,7 @@ function Home(props) {
   }
 
   updatedata();
-
-  console.log(temp);
+*/
   return (
     <div className="temperature-container">
       <h1 className="project-heading"> Sensor Data </h1>
@@ -81,7 +90,8 @@ function Home(props) {
               <Paper className={classes.paper}>
                 <h2 className="headingdiv">Temperature</h2>
                 <h2 className="red margin-bottom-small">
-                  {temp[0] ? temp[0] : 0} ℃{" "}
+                  {Temperature ? Temperature[Temperature.length - 1].temp : 29}{" "}
+                  ℃{" "}
                 </h2>
 
                 <img
@@ -95,8 +105,10 @@ function Home(props) {
             <Grid item xs={12} sm={6} md={4}>
               <Paper className={classes.paper}>
                 {" "}
-                <h2 className="headingdiv">PH</h2>
-                <h2 className="red margin-bottom-small">{GlobalData.Ph}</h2>
+                <h2 className="headingdiv">TDS</h2>
+                <h2 className="red margin-bottom-small">
+                  {Sensordata ? Sensordata[Sensordata.length - 1].tds : 1500}
+                </h2>
                 <img
                   alt=""
                   height="100px"
@@ -108,7 +120,11 @@ function Home(props) {
             <Grid item xs={12} sm={6} md={4}>
               <Paper className={classes.paper}>
                 <h2 className="headingdiv">Turbidity</h2>
-                <h2 className="red margin-bottom-small">Moderate</h2>
+                <h2 className="red margin-bottom-small">
+                  {Sensordata
+                    ? Sensordata[Sensordata.length - 1].turbidity
+                    : 25}
+                </h2>
 
                 <img
                   alt=""
@@ -121,7 +137,7 @@ function Home(props) {
             <Grid item xs={12} sm={6} md={4}>
               <Paper className={classes.paper}>
                 <h2 className="headingdiv">Water quality</h2>
-                <h2 className="red margin-bottom-small">{WaterQuality()}</h2>
+                <h2 className="red margin-bottom-small">{"WaterQuality"}</h2>
 
                 <img
                   alt=""
@@ -135,7 +151,7 @@ function Home(props) {
             <Grid item xs={12} sm={6} md={4}>
               <Paper className={classes.paper}>
                 <h2 className="headingdiv">Disease</h2>
-                <h2 className="red margin-bottom-small">{diseaseCheck()}</h2>
+                <h2 className="red margin-bottom-small">{"diseaseCheck"}</h2>
 
                 <img
                   alt=""

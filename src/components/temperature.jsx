@@ -23,7 +23,17 @@ const useStyles = makeStyles((theme) => ({
 const value = Math.floor(Math.random() * 101);
 
 export default function Temperature(props) {
-  console.log(props.location.data, " temperature ");
+  console.log(props.location.data, " temperature data ");
+
+  const Data = props.location.data;
+  console.log("zTemperature componentstate is ", Data);
+
+  const { Temperature } = Data ? Data : "";
+
+  console.log("in temp compo ",Temperature ,  Temperature
+                      ? Temperature[Temperature.length - 1]?.temp
+                      : 28);
+
   const classes = useStyles();
   return (
     <div className="temperature-container">
@@ -41,7 +51,13 @@ export default function Temperature(props) {
             */}
             <Grid item xs={12} sm={6} md={4}>
               <Paper className={classes.paper}>
-                <Temperaturemeter value={value} />
+                <Temperaturemeter
+                  value={
+                    Temperature
+                      ? Temperature[Temperature.length - 1]?.temp
+                      : 28
+                  }
+                />
               </Paper>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
@@ -50,7 +66,11 @@ export default function Temperature(props) {
 
                 <Thermometer
                   theme="light"
-                  value={value}
+                  value={
+                    Temperature
+                      ? Temperature[Temperature.length - 1]?.temp
+                      : 28
+                  }
                   max="100"
                   steps="3"
                   format="°C"
@@ -63,7 +83,11 @@ export default function Temperature(props) {
             <Grid justify="center" item xs={12} sm={12}>
               <Paper className={classes.paper}>
                 <h2>Temperature Trend</h2>
-                <TemperatureLine />
+                <TemperatureLine
+                  value={
+                    Temperature ? Temperature[Temperature.length - 1] : 28
+                  }
+                />
               </Paper>
             </Grid>
           </Grid>

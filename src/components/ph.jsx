@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Ph() {
+export default function Ph(props) {
   const classes = useStyles();
   return (
     <div className="temperature-container">

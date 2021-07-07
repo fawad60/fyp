@@ -6,7 +6,7 @@ class Temperaturegauge extends React.Component {
     super(props);
 
     this.state = {
-      series: [Math.floor(Math.random() * 101)],
+      series: [],
       options: {
         chart: {
           type: "radialBar",
