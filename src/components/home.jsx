@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useEffect, useLocation } from "react-router-dom";
 import { withRouter } from "react-router";
-
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
@@ -50,35 +49,27 @@ function Home(props) {
 
   console.log("hyy ", data);
 
-  /*function diseaseCheck() {
-    if (GlobalData.Ph > 7) {
-      return "metabolic alkalosis";
-    } else if (GlobalData.Ph < 6) {
-      return "Gastrointestinal Sickness";
-    } else {
-      return "   Water Qaulity is normal";
-    }
+  function DiseasePrediction() {
+    if (Sensordata ? Sensordata[Sensordata.length - 1].tds > 1300 : false)
+      return "possibilty of Kidney stones";
+    else if (Sensordata ? Sensordata[Sensordata.length - 1].tds > 1400 : false)
+      return "Typhoid";
+    else if (Sensordata ? Sensordata[Sensordata.length - 1].tds < 1300 : false)
+      return " Low possibility of any disease";
+    else return "fetching data";
   }
 
   function WaterQuality() {
-    if (GlobalData.Ph > 7) {
-      return "High Ph ";
-    } else if (GlobalData.Ph < 6) {
-      return "Low PH (Acidic)";
-    } else {
-      return "   Water Qaulity is normal";
-    }
+    if (Sensordata ? Sensordata[Sensordata.length - 1].tds > 1300 : false)
+      return "Hard water ";
+    else if (Sensordata ? Sensordata[Sensordata.length - 1].tds > 1400 : false)
+      return "Contaminated water";
+    else if (Sensordata ? Sensordata[Sensordata.length - 1].tds < 1300 : false)
+      return " Normal Quality";
+    else return "fetching data";
   }
+  console.log(Sensordata ? Sensordata[Sensordata.length - 1].tds : 1300);
 
-  
-  function updatedata() {
-    if (Data) {
-      Data.map((data) => temp.push(data.Temp), console.table(temp));
-    } else return;
-  }
-
-  updatedata();
-*/
   return (
     <div className="temperature-container">
       <h1 className="project-heading"> Sensor Data </h1>
@@ -137,7 +128,7 @@ function Home(props) {
             <Grid item xs={12} sm={6} md={4}>
               <Paper className={classes.paper}>
                 <h2 className="headingdiv">Water quality</h2>
-                <h2 className="red margin-bottom-small">{"WaterQuality"}</h2>
+                <h2 className="red margin-bottom-small">{WaterQuality()}</h2>
 
                 <img
                   alt=""
@@ -151,7 +142,9 @@ function Home(props) {
             <Grid item xs={12} sm={6} md={4}>
               <Paper className={classes.paper}>
                 <h2 className="headingdiv">Disease</h2>
-                <h2 className="red margin-bottom-small">{"diseaseCheck"}</h2>
+                <h2 className="red margin-bottom-small">
+                  {DiseasePrediction()}
+                </h2>
 
                 <img
                   alt=""
@@ -161,12 +154,12 @@ function Home(props) {
                 />
               </Paper>
             </Grid>
-            <Grid item xs={12} sm={6} md={4}>
+            {/*        <Grid item xs={12} sm={6} md={4}>
               <Paper className={classes.paper}>
                 <h2 className="headingdiv bottom-small">Water Level</h2>
                 <WaterLevel />
               </Paper>
-            </Grid>
+                  </Grid>*/}
           </Grid>
         </div>
         );

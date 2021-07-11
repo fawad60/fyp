@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 import ReactApexChart from "react-apexcharts";
 
-class PHavaverageLine extends React.Component {
+class TdsavaverageLine extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       series: [
         {
-          name: "High - 2020",
-          data: [8, 7.9, 7.6, 7.5, 7.4, 7.1, 8],
+          name: "High - 2021",
+          data: [1600, 1550, 1450, 1520, 1420, 1510, 1590],
         },
         {
-          name: "Low - 2020",
-          data: [6, 7, 7.1, 6.5, 7, 6.9, 6.8],
+          name: "Low - 2021",
+          data: [1300, 1250, 1250, 1210, 1330, 1210, 1390],
         },
       ],
       options: {
@@ -40,7 +40,7 @@ class PHavaverageLine extends React.Component {
           curve: "smooth",
         },
         title: {
-          text: "Average High & Low PH of previous months",
+          text: "Average High & Low TDS",
           align: "left",
         },
         grid: {
@@ -54,17 +54,17 @@ class PHavaverageLine extends React.Component {
           size: 1,
         },
         xaxis: {
-          categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+          categories: ["Mon", "Tue", "wed", "thu", "fri", "sun", "sat"],
           title: {
-            text: "Month",
+            text: "week",
           },
         },
         yaxis: {
           title: {
-            text: "PH value",
+            text: "Tds value",
           },
-          min: 0,
-          max: 14,
+          min: 1100,
+          max: 1600,
         },
         legend: {
           position: "top",
@@ -91,4 +91,4 @@ class PHavaverageLine extends React.Component {
   }
 }
 
-export default PHavaverageLine;
+export default TdsavaverageLine;

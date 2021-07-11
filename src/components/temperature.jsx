@@ -6,6 +6,7 @@ import Temperaturegauge from "./temperature-gauge";
 import Thermometer from "react-thermometer-component";
 import TemperatureLine from "./temperature-line chart";
 import Temperaturemeter from "./temperature-meter";
+import LineChart from "./linechart";
 import "./temperature.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -26,14 +27,14 @@ export default function Temperature(props) {
   console.log(props.location.data, " temperature data ");
 
   const Data = props.location.data;
-  console.log("zTemperature componentstate is ", Data);
+  // console.log("zTemperature componentstate is ", Data);
 
   const { Temperature } = Data ? Data : "";
-
-  console.log("in temp compo ",Temperature ,  Temperature
+  console.log("Temperatur after destructure", Temperature);
+  /* console.log("in temp compo ",Temperature ,  Temperature
                       ? Temperature[Temperature.length - 1]?.temp
                       : 28);
-
+*/
   const classes = useStyles();
   return (
     <div className="temperature-container">
@@ -53,9 +54,7 @@ export default function Temperature(props) {
               <Paper className={classes.paper}>
                 <Temperaturemeter
                   value={
-                    Temperature
-                      ? Temperature[Temperature.length - 1]?.temp
-                      : 28
+                    Temperature ? Temperature[Temperature.length - 1]?.temp : 28
                   }
                 />
               </Paper>
@@ -67,9 +66,7 @@ export default function Temperature(props) {
                 <Thermometer
                   theme="light"
                   value={
-                    Temperature
-                      ? Temperature[Temperature.length - 1]?.temp
-                      : 28
+                    Temperature ? Temperature[Temperature.length - 1]?.temp : 28
                   }
                   max="100"
                   steps="3"
@@ -83,16 +80,11 @@ export default function Temperature(props) {
             <Grid justify="center" item xs={12} sm={12}>
               <Paper className={classes.paper}>
                 <h2>Temperature Trend</h2>
-                <TemperatureLine
-                  value={
-                    Temperature ? Temperature[Temperature.length - 1] : 28
-                  }
-                />
+                <TemperatureLine value={Temperature} />
               </Paper>
             </Grid>
           </Grid>
         </div>
-        );
       </div>
     </div>
   );

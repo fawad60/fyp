@@ -60,13 +60,13 @@ class Temperaturemeter extends React.Component {
     super(props);
     this.state = {
       value: this.props.value,
+    
     };
-
-    console.log("val check", this.state.value);
+    
   }
   render() {
     dataSource.dials.dial[0].value = this.state.value;
-    console.table(this.state.value);
+    console.log(this.state.value);
     return (
       <ReactFusioncharts
         type="angulargauge"

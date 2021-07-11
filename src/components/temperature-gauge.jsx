@@ -40,6 +40,7 @@ class Temperaturegauge extends React.Component {
                 offsetY: -40,
                 fontSize: "22px",
                 formatter: function (val) {
+                  console.log("temp meter is", val);
                   return val + " ℃";
                 },
               },
@@ -68,7 +69,7 @@ class Temperaturegauge extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({ series: [this.props.value] });
+    this.setState({ series: [this.props.location.data] });
   }
   render() {
     return (

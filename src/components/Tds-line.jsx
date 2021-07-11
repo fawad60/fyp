@@ -15,13 +15,13 @@ charts(FusionCharts);
 
 const dataSource = {
   chart: {
-    caption: "Average Daily PH Value",
+    caption: "Average Daily Tds Value",
     yaxis: {
       title: {
-        text: "PH value",
+        text: "Tds value",
       },
-      min: 0,
-      max: 14,
+      min: 1100,
+      max: 1600,
     },
     subcaption: "",
     numbersuffix: " ",
@@ -32,36 +32,36 @@ const dataSource = {
   data: [
     {
       label: "Mon",
-      value: "7.1",
+      value: "1501",
     },
     {
       label: "Tue",
-      value: "7.5",
+      value: "1467",
     },
     {
       label: "Wed",
-      value: "6",
+      value: "1492",
     },
     {
       label: "Thu",
-      value: "7.9",
+      value: "1521",
     },
     {
       label: "Fri",
-      value: "7.5",
+      value: "1580",
     },
     {
       label: "sat",
-      value: "8.9",
+      value: "1455",
     },
     {
       label: "sun",
-      value: "7",
+      value: "1500",
     },
   ],
 };
 
-class Phline extends React.Component {
+class Tdsline extends React.Component {
   render() {
     return (
       <ReactFusioncharts
@@ -74,4 +74,4 @@ class Phline extends React.Component {
   }
 }
 
-export default Phline;
+export default Tdsline;

@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
+import LineChart from "./linechart";
 import Mixlinetimechart from "./time-line-serieschart";
 import "./temperature.css";
 
@@ -23,7 +24,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Turbidity() {
+export default function Turbidity(props) {
+   const Data = props.location.data;
+ // console.log("zTemperature componentstate is ", Data);
+
+  const { Sensordata } = Data ? Data : "";
   const classes = useStyles();
   return (
     <div className="temperature-container">
@@ -32,44 +37,17 @@ export default function Turbidity() {
       <div className="temperature-sub-container">
         <div className={classes.root}>
           <Grid container spacing={6}>
-            <Grid item xs={12} sm={6} md={4}>
+           <Grid justify="center" item xs={12} sm={12}>
               <Paper className={classes.paper}>
-                <h2 className="headingdiv">Fetching Data.........</h2>
-                <h2 className="red"> Please Be patient....</h2>{" "}
-              </Paper>
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <Paper className={classes.paper}>
-                {" "}
-                <h2 className="headingdiv">Fetching Data.........</h2>
-                <h2 className="red"> Please Be patient....</h2>{" "}
-              </Paper>
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <Paper className={classes.paper}>
-                {" "}
-                <h2 className="headingdiv">Fetching Data.........</h2>
-                <h2 className="red"> Please Be patient....</h2>
-              </Paper>
-            </Grid>
-            <Grid item xs={12} sm={6} md={6}>
-              <Paper className={classes.paper}>
-                {" "}
-                <h2 className="headingdiv">Fetching Data.........</h2>
-                <h2 className="red"> Please Be patient....</h2>
-              </Paper>
-            </Grid>
-
-            <Grid item xs={12} sm={6} md={6}>
-              <Paper className={classes.paper}>
-                {" "}
-                <h2 className="headingdiv">Fetching Data.........</h2>
-                <h2 className="red"> Please Be patient....</h2>
+                <h2>Turbidity Trend</h2>
+                <LineChart
+                  value={
+                   Sensordata                 }
+                />
               </Paper>
             </Grid>
           </Grid>
         </div>
-        );
       </div>
     </div>
   );

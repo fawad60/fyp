@@ -5,15 +5,25 @@ class TemperatureLine extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
+    const Data = this.props.value;
+  console.log("Temperature componentstate is ", Data);
+
+  const { Temperature } = Data ? Data : "";
+
+
+  console.log("qqqqqqq",Temperature,Temperature?.temp?.map((data)=> data.temp) )
+
+  
+ this.state = {
+      value: this.props.value,
       series: [
         {
           name: "High - 2020",
-          data: [28, 29, 33, 36, 32, 32, 33],
+          data: [33, 29, 33, 36, 32, 32, 33],
         },
         {
           name: "Low - 2020",
-          data: [12, 11, 14, 18, 17, 13, 13],
+          data: [25, 26, 20, 21, 23, 27, 29],
         },
       ],
       options: {
@@ -54,9 +64,9 @@ class TemperatureLine extends React.Component {
           size: 1,
         },
         xaxis: {
-          categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+          categories: ["Mon", "Tue", "Wed", "Thusday", "Fri", "Sat", "Sun"],
           title: {
-            text: "Month",
+            text: "Day",
           },
         },
         yaxis: {
@@ -78,6 +88,8 @@ class TemperatureLine extends React.Component {
   }
 
   render() {
+
+    console.log(this.state.value);
     return (
       <div id="chart">
         <ReactApexChart

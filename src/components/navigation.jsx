@@ -50,8 +50,8 @@ export const Navigation = ({ data }) => {
           </li>
 
           <li>
-            <Link style={liststyle} to="/ph">
-              PH
+            <Link style={liststyle} to="/tds">
+              TDS
             </Link>
           </li>
           <li>

@@ -15,10 +15,10 @@ charts(FusionCharts);
 const dataSource = {
   chart: {
     theme: "fusion",
-    caption: "PH range",
+    caption: "TDS range",
     subcaption: "",
-    lowerLimit: "0",
-    upperLimit: "14",
+    lowerLimit: "1200",
+    upperLimit: "1600",
     numberSuffix: " ",
     chartBottomMargin: "40",
     valueFontSize: "11",
@@ -27,21 +27,21 @@ const dataSource = {
   colorRange: {
     color: [
       {
-        minValue: "0",
-        maxValue: "6.9",
-        label: "Acidic",
+        minValue: "1200",
+        maxValue: "1400",
+        label: "low",
         color: "#F2726F",
       },
       {
-        minValue: "7",
-        maxValue: "7.9",
-        label: "Neutral",
+        minValue: "1400",
+        maxValue: "1500",
+        label: "normal",
         color: "#017827",
       },
       {
-        minValue: "8",
-        maxValue: "14",
-        label: "Alkaline",
+        minValue: "1500",
+        maxValue: "1600",
+        label: "high",
         color: "#34156e",
       },
     ],
@@ -49,7 +49,7 @@ const dataSource = {
   pointers: {
     pointer: [
       {
-        value: "7",
+        value: "1420",
       },
     ],
   },
@@ -76,7 +76,7 @@ const dataSource = {
             type: "Text",
             fontSize: "11",
             fillcolor: "#ffffff",
-            text: "Recommended Utilization PH Range : 7-8",
+            text: "Recommended Utilization Tds Range ",
             x: "$chartCenterX",
             y: "$chartEndY-12",
           },
@@ -86,7 +86,7 @@ const dataSource = {
   },
 };
 
-class Phbar extends React.Component {
+class Tdsbar extends React.Component {
   render() {
     return (
       <ReactFusioncharts
@@ -98,4 +98,4 @@ class Phbar extends React.Component {
     );
   }
 }
-export default Phbar;
+export default Tdsbar;
